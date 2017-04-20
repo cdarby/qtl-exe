@@ -1,20 +1,22 @@
 #!/bin/sh
 
+# inspired by https://github.com/mschatz/flipabit
+
 if [ ! -r flipabit ]
 then
   make
 fi
 
 #echo "Running original program"
-./qtl >& gold.out
+./$1 >& gold.out
 
-for pos in `seq 0 8976`
+for pos in `seq 0 $2`
 do
   #echo -n "Introducing random mutation to a bit in byte $pos... "
-  ./flipabit qtl qtl.$pos $pos >& $pos.log
-  chmod +x qtl.$pos
+  ./flipabit $1 $1.$pos $pos >& $pos.log
+  chmod +x $1.$pos
 
-  gtimeout 1 bash -c "./qtl.$pos >& $pos.out"
+  gtimeout 1 bash -c "./$1.$pos >& $pos.out"
   #./qtl.$pos >& $pos.out
   last=$?
   if [ $last != 0 ]
@@ -25,12 +27,12 @@ do
     last=$?
     if [ $last != 0 ]
     then
-      echo $pos "0"
+      echo $pos "0" #keep the strange output file
     else
       rm $pos.out.diff
     fi
   fi
   rm $pos.out  
   rm $pos.log
-  rm qtl.$pos
+  rm $1.$pos
 done
