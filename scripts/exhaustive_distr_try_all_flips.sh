@@ -43,7 +43,3 @@ do
     rm $1.$pos
   done
 done
-
-#./exhaustive_distr_try_all_flips.sh outputO0/qtl0 9036 EXoutputO0-1/
-#./exhaustive_distr_try_all_flips.sh outputO1/qtl1 9036 EXoutputO1-1/
-#./exhaustive_distr_try_all_flips.sh outputO2/qtl2 9012 EXoutputO2-1/
