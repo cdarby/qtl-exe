@@ -1,4 +1,4 @@
-/* Charlotte Darby cdarby@jhu.edu */
+/* Charlotte Darby*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,26 +10,6 @@ unsigned int crc32a(unsigned char *message, int len);
 void Initialize(const unsigned int seed);
 static void Twist();
 unsigned int ExtractU32();
-
-
-// Constants, as static and enum 
-/*static float MAX_TWIST = 4294967295.0;
-static int LOOP_ITERS = 100;
-enum {
-    N = 624,
-    M = 397,
-    R = 31,
-    A = 0x9908B0DF,
-    F = 1812433253,
-    U = 11,
-    S = 7,
-    B = 0x9D2C5680,
-    T = 15,
-    C = 0xEFC60000,
-    L = 18,
-    MASK_LOWER = (1ull << R) - 1,
-    MASK_UPPER = (1ull << R)
-};*/
 
 // Constants, as #define macros
 #define MAX_TWIST 4294967295.0
@@ -125,7 +105,6 @@ unsigned reverse(unsigned x) {
 /* This is the basic CRC algorithm with no optimizations. It follows the
    logic circuit as closely as possible. 
    http://www.hackersdelight.org/hdcodetxt/crc.c.txt */
-
 unsigned int crc32a(unsigned char *message, int len) {
    int i, j, k;
    unsigned int byte, crc;
@@ -147,7 +126,6 @@ unsigned int crc32a(unsigned char *message, int len) {
 }
 
 /* https://en.wikipedia.org/wiki/Mersenne_Twister#C.2FC.2B.2B_implementation */
-
 // Re-init with a given seed
 void Initialize(const unsigned int  seed) {
     unsigned int  i;

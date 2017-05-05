@@ -9,11 +9,13 @@ fi
 
 if [ "$#" -ne 4 ]; then
     echo "./scripts/multiple_distr_try_all_flips.sh <base program> <original program> <path to output dir> <path to candidate mutations>"
+    exit
 fi
 
-for itervar in `seq 0 1000`
+for itervar in `seq 0 709`
 do
-  cp $1 $2
+  cp $2 $1
+  echo $4
   IFS=$'\n'
   for line in `gshuf $4 -n 500`
   do
@@ -48,3 +50,5 @@ do
   `wc -l $3mean >> linecounts.final`
   rm $3mean
 done
+
+#./scripts/multiple_distr_try_all_flips.sh qtlEDIT outputRAND42/qtlRAND iter500-R/ outputRAND42new/mean

@@ -9,6 +9,7 @@ fi
 
 if [ "$#" -ne 3 ]; then
     echo "./scripts/distr_try_all_flips.sh <base program> <number of bytes> <path to output dir>"
+    exit
 fi
 
 for pos in `seq 0 $2`

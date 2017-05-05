@@ -2,8 +2,8 @@ CC=gcc
 
 all: qtl flipabit exhaustive_flipabit
 
-qtl: qtl.c
+qtl: -O0 src/qtl.c -o bin/qtl
 
-flipabit: flipabit.c
+flipabit: src/flipabit.c -o bin/flipabit
 
-exhaustive_flipabit: exhaustive_flipabit.c
+exhaustive_flipabit: src/exhaustive_flipabit.c -o bin/exhaustive_flipabit
