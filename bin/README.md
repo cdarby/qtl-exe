@@ -1,5 +1,5 @@
 # Binaries
-These are the 8 binary files I used to generate my results. Since the exact bits in the file are essential to the computations, I include the executables here. Be warned: they may not reproduce my results or even execute on your system.
+These are the 8 binary files I used to generate the data in `/results`. Since the exact bits in the file are essential to the computations, I include the executables here. Be warned: they may not reproduce my results or even execute on your system. (If you want to experiment with mutating the program until it runs on a different architecture, go for it! My hunch is it will be much harder to fix than to break.)
 
 ## Compliation options
 ```
@@ -26,6 +26,13 @@ Apple LLVM version 8.1.0 (clang-802.0.42)
 Target: x86_64-apple-darwin16.5.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+```
+
+## clang version (multicompiler)
+```
+clang version 3.5.2
+Target: x86_64-apple-darwin16.5.0
+Thread model: posix
 ```
 
 ## CRC32 
